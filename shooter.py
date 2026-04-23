@@ -18,15 +18,15 @@ BLACK = (20,20,20)
 
 #Jugador
 player = pygame.Rect(370, 500, 60, 40)
-player_speed = 6
+player_speed = 1
 
 #Balas 
 bullets = []
-bullet_speed = 8
+bullet_speed = 3
 
 #Enemigos 
 enemies = []
-enemy_speed = 3 
+enemy_speed = 1 
 
 SPAWN_ENEMY = pygame.USEREVENT
 pygame.time.set_timer(SPAWN_ENEMY, 1000)
@@ -56,7 +56,7 @@ while True:
     
     if keys[pygame.K_LEFT] and player.left > 0:
         player.x -= player_speed
-    if keys[pygame.RIGHT] and player.right < WIDTH:
+    if keys[pygame.K_RIGHT] and player.right < WIDTH:
         player.x += player_speed
     
     #Movimiento de las balas
